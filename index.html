@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brylo Brew Cafe</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <div class="floating-bg">
+        <img src="https://cdn-icons-png.flaticon.com/512/2935/2935307.png" class="float-item f-1" alt="cookie">
+        <img src="https://cdn-icons-png.flaticon.com/512/3055/3055375.png" class="float-item f-2" alt="donut">
+        <img src="https://cdn-icons-png.flaticon.com/512/751/751621.png" class="float-item f-3" alt="coffee bean">
+        <img src="https://cdn-icons-png.flaticon.com/512/2927/2927347.png" class="float-item f-4" alt="croissant">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992710.png" class="float-item f-5" alt="cupcake">
+        <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png" class="float-item f-6" alt="cake">
+        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" class="float-item f-7" alt="macaron">
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeDrawers()"></div>
+
+    <header>
+        <div class="logo" data-i18n="logo">BRYLO</div>
+        <div class="header-actions">
+            <div class="cart-btn" onclick="toggleCart()" id="cart-trigger">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="menu-trigger" onclick="toggleSettings()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <h1 class="hero-title" data-i18n="heroTitle">Taste the Magic ✨</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">Artisan sweets crafted with love, baked fresh daily for your
+            delight</p>
+    </section>
+
+    <section class="category-container">
+        <div class="category-tabs" id="categoryTabs">
+            <div class="tab-indicator" id="tabIndicator"></div>
+            <button class="cat-btn active" onclick="filter('sweets', this)" data-i18n="sweets">Sweets</button>
+            <button class="cat-btn" onclick="filter('icecream', this)" data-i18n="icecream">Ice Cream</button>
+            <button class="cat-btn" onclick="filter('bakery', this)" data-i18n="bakery">Bakery</button>
+        </div>
+    </section>
+
+    <main class="product-grid" id="grid"></main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span data-i18n="addedToCart">Added to cart!</span>
+    </div>
+
+    <aside class="drawer drawer-right" id="cartDrawer">
+        <div class="drawer-header">
+            <span data-i18n="yourCart">Your Cart</span>
+            <div class="close-btn" onclick="closeDrawers()">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div id="cartList" style="flex:1; overflow-y:auto;">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-basket"></i>
+                <p data-i18n="empty">Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-i18n="total">Total</span>
+                <span id="totalPrice">Ð 0</span>
+            </div>
+            <button class="checkout-btn" data-i18n="checkout">
+                <i class="fas fa-lock"></i>
+                SECURE CHECKOUT
+            </button>
+        </div>
+    </aside>
+
+    <aside class="drawer drawer-right" id="settingsDrawer">
+        <div class="drawer-header">
+            <span data-i18n="settings">Settings</span>
+            <div class="close-btn" onclick="closeDrawers()">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+
+        <div class="lang-toggle" id="langSwitch" data-active="en" onclick="switchLang()">
+            <div class="toggle-bg"></div>
+            <div class="lang-opt active" id="opt-en">English</div>
+            <div class="lang-opt" id="opt-ar">عربي</div>
+        </div>
+
+        <div class="settings-menu">
+            <div class="settings-item">
+                <i class="fas fa-comment"></i>
+                <span data-i18n="feedback">Send Feedback</span>
+            </div>
+            <div class="settings-item">
+                <i class="fas fa-heart"></i>
+                <span data-i18n="favorites">My Favorites</span>
+            </div>
+            <div class="settings-item">
+                <i class="fas fa-history"></i>
+                <span data-i18n="orders">Order History</span>
+            </div>
+            <div class="settings-item">
+                <i class="fas fa-shield-alt"></i>
+                <span data-i18n="privacy">Privacy Policy</span>
+            </div>
+        </div>
+    </aside>
+
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
