@@ -1,13 +1,102 @@
 // Data
+// Data
 const products = [
-    { id: 1, nameEn: "Nutella Cookies", nameAr: "كوكيز نوتيلا", price: 37, type: "sweets", img: "https://images.unsplash.com/photo-1590080874088-e564811771ce?w=400" },
-    { id: 2, nameEn: "Kinder Cookies", nameAr: "كوكيز كيندر", price: 37, type: "sweets", img: "https://images.unsplash.com/photo-1618930165806-38299238318e?w=400" },
-    { id: 3, nameEn: "Date Cake", nameAr: "كيكة التمر", price: 120, type: "sweets", img: "https://images.unsplash.com/photo-1542826438-bd32f43d626f?w=400" },
-    { id: 4, nameEn: "Vanilla Scoop", nameAr: "فانيلا سكوب", price: 25, type: "icecream", img: "https://images.unsplash.com/photo-1560008581-09826d1de69e?w=400" },
-    { id: 5, nameEn: "Chocolate Cone", nameAr: "مخروط الشوكولاتة", price: 30, type: "icecream", img: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=400" },
-    { id: 6, nameEn: "Croissant", nameAr: "كرواسون", price: 15, type: "bakery", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" },
-    { id: 7, nameEn: "Blueberry Muffin", nameAr: "مافن التوت", price: 22, type: "bakery", img: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=400" },
-    { id: 8, nameEn: "Strawberry Gelato", nameAr: "جيلاتو الفراولة", price: 28, type: "icecream", img: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400" }
+    {
+        id: 1,
+        nameEn: "Mini Cookies Nutella",
+        nameAr: "ميني كوكيز نوتيلا",
+        price: 37,
+        type: "sweets",
+        img: "assets/img/minicookies.jpeg",
+        images: [
+            "assets/img/minicookies.jpeg",
+            "assets/img/mini.jpeg"
+        ],
+        descEn: "Mini cookies stuffed with rich Nutella.",
+        descAr: "كوكيز صغيرة محشوة بالنوتيلا الغنية."
+    },
+    {
+        id: 2,
+        nameEn: "Mini Cookies Kinder",
+        nameAr: "ميني كوكيز كيندر",
+        price: 37,
+        type: "sweets",
+        img: "assets/img/minicookies.jpeg",
+        images: [
+            "assets/img/minicookies.jpeg",
+            "assets/img/mini.jpeg"
+        ],
+        descEn: "Mini cookies loaded with Kinder chocolate chunks.",
+        descAr: "كوكيز صغيرة مليئة بقطع كيندر."
+    },
+    {
+        id: 3,
+        nameEn: "Date Cake",
+        nameAr: "كيكة التمر",
+        price: 120,
+        type: "sweets",
+        img: "assets/img/datecake.jpeg",
+        images: [
+            "assets/img/datecake.jpeg",
+            "assets/img/date1.jpeg",
+            "assets/img/date2.jpeg"
+        ],
+        descEn: "Signature date cake topped with toffee sauce.",
+        descAr: "كيكة التمر المميزة مغطاة بصوص التوفي."
+    },
+    {
+        id: 4,
+        nameEn: "Lemon Cake",
+        nameAr: "كيكة الليمون",
+        price: 140,
+        type: "sweets",
+        img: "assets/img/lemoncake.jpeg",
+        images: [
+            "assets/img/lemoncake.jpeg",
+            "assets/img/lemon2.jpeg",
+        ],
+        descEn: "Zesty lemon cake with a fresh citrus glaze.",
+        descAr: "كيكة الليمون المنعشة مع طبقة من السيروب."
+    },
+    {
+        id: 5,
+        nameEn: "Ice Cream - Small",
+        nameAr: "آيس كريم - صغير",
+        price: 140,
+        type: "icecream",
+        img: "assets/img/icecream.jpeg",
+        images: [
+            "assets/img/icecream.jpeg",
+        ],
+        descEn: "Selection of premium ice cream flavors (Small Box).",
+        descAr: "تشكيلة من نكهات الآيس كريم الفاخرة (صندوق صغير)."
+    },
+    {
+        id: 6,
+        nameEn: "Ice Cream - Large",
+        nameAr: "آيس كريم - كبير",
+        price: 220,
+        type: "icecream",
+        img: "assets/img/icecream.jpeg",
+        images: [
+            "assets/img/icecream.jpeg",
+        ],
+        descEn: "Selection of premium ice cream flavors (Large Box).",
+        descAr: "تشكيلة من نكهات الآيس كريم الفاخرة (صندوق كبير)."
+    },
+    {
+        id: 7,
+        nameEn: "Za'atar Babka",
+        nameAr: "بابكا الزعتر",
+        price: 120,
+        type: "bakery",
+        img: "assets/img/babka.jpeg",
+        images: [
+            "assets/img/babka.jpeg",
+        ],
+        descEn: "Savory babka swirled with aromatic za'atar.",
+        descAr: "بابكا مخبوزة مع الزعتر الفاخر."
+    }
 ];
 
 const dict = {
@@ -27,7 +116,8 @@ const dict = {
     favorites: { en: "My Favorites", ar: "المفضلة" },
     orders: { en: "Order History", ar: "سجل الطلبات" },
     privacy: { en: "Privacy Policy", ar: "الخصوصية" },
-    addedToCart: { en: "Added to cart!", ar: "تمت الإضافة!" }
+    addedToCart: { en: "Added to cart!", ar: "تمت الإضافة!" },
+    modalAdd: { en: "Add to Order", ar: "أضف للطلب" }
 };
 
 let lang = "en";
@@ -45,6 +135,13 @@ function updateTabIndicator() {
 }
 
 // Logic
+
+// Modal & Slider State
+let currentModalId = null;
+let currentSlideIndex = 0;
+let modalImages = [];
+
+// ... [Existing render function updates] ...
 function render() {
     const grid = document.getElementById("grid");
     grid.innerHTML = "";
@@ -57,9 +154,13 @@ function render() {
         const card = document.createElement("div");
         card.className = "product-card";
         card.style.animationDelay = `${index * 0.1}s`;
+
+        // Make image and name clickable to open modal
         card.innerHTML = `
-            <div class="img-box"><img src="${p.img}" id="img-${p.id}" alt="${name}"></div>
-            <h3 class="product-name">${name}</h3>
+            <div class="img-box" onclick="openModal(${p.id})">
+                <img src="${p.img}" id="img-${p.id}" alt="${name}">
+            </div>
+            <h3 class="product-name" onclick="openModal(${p.id})" style="cursor:pointer">${name}</h3>
             <p class="product-price">Ð ${p.price}</p>
             <button class="add-btn" onclick="add(${p.id}, event)">
                 <i class="fas fa-plus"></i>
@@ -69,6 +170,85 @@ function render() {
         grid.appendChild(card);
     });
 }
+
+// Modal Logic
+function openModal(id) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    currentModalId = id;
+
+    // Setup Images (Use array if exists, else fallback to single img)
+    modalImages = product.images && product.images.length > 0 ? product.images : [product.img];
+    currentSlideIndex = 0;
+
+    // Populate Content
+    const name = lang === "en" ? product.nameEn : product.nameAr;
+    const desc = lang === "en" ? (product.descEn || "Delicious treat from Brylo.") : (product.descAr || "حلوى لذيذة من بريلو.");
+
+    document.getElementById("modalTitle").innerText = name;
+    document.getElementById("modalPrice").innerText = "Ð " + product.price;
+    document.getElementById("modalDesc").innerText = desc;
+
+    // Update Add Button Text
+    const addBtn = document.getElementById("modalAddBtn");
+    addBtn.querySelector("span").innerText = dict.modalAdd[lang];
+    addBtn.onclick = (e) => {
+        add(id, e);
+        closeModal(); // Optional: Close on add or keep open? User request didn't specify, but closing feels smoother or showing toast.
+        // Let's call showToast() inside add() which is already there, so we might keep modal open or close it. 
+        // I'll keep it open so they can see the gallery, unless they want to browse more.
+        // Actually, let's close it for better flow.
+        closeModal();
+    };
+
+    updateSlider();
+
+    document.getElementById("productModal").classList.add("active");
+}
+
+function closeModal() {
+    document.getElementById("productModal").classList.remove("active");
+}
+
+function slide(direction) {
+    currentSlideIndex += direction;
+    if (currentSlideIndex >= modalImages.length) currentSlideIndex = 0;
+    if (currentSlideIndex < 0) currentSlideIndex = modalImages.length - 1;
+    updateSlider();
+}
+
+function updateSlider() {
+    const container = document.getElementById("modalSlider");
+    const dotsContainer = document.getElementById("sliderDots");
+
+    // Render Slides
+    container.innerHTML = modalImages.map((img, index) => `
+        <img src="${img}" class="slide-item ${index === currentSlideIndex ? 'active' : ''}">
+    `).join("");
+
+    // Render Dots
+    if (modalImages.length > 1) {
+        dotsContainer.innerHTML = modalImages.map((_, index) => `
+            <div class="slider-dot ${index === currentSlideIndex ? 'active' : ''}" onclick="goToSlide(${index})"></div>
+        `).join("");
+    } else {
+        dotsContainer.innerHTML = "";
+    }
+}
+
+function goToSlide(index) {
+    currentSlideIndex = index;
+    updateSlider();
+}
+
+// Close modal on outside click
+document.getElementById("productModal").addEventListener("click", (e) => {
+    if (e.target.classList.contains("modal-overlay")) closeModal();
+});
+
+// ... [Existing filter, toast, ripple logic] ...
+
 
 function filter(type, el) {
     filterType = type;

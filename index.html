@@ -1,127 +1,162 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brylo Brew Cafe</title>
+    <title>Sweets & Coffee | Brylo Brew</title>
+    <!-- Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Styles -->
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
+    <!-- Floating Background Particles -->
     <div class="floating-bg">
-        <img src="https://cdn-icons-png.flaticon.com/512/2935/2935307.png" class="float-item f-1" alt="cookie">
-        <img src="https://cdn-icons-png.flaticon.com/512/3055/3055375.png" class="float-item f-2" alt="donut">
-        <img src="https://cdn-icons-png.flaticon.com/512/751/751621.png" class="float-item f-3" alt="coffee bean">
-        <img src="https://cdn-icons-png.flaticon.com/512/2927/2927347.png" class="float-item f-4" alt="croissant">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992710.png" class="float-item f-5" alt="cupcake">
-        <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png" class="float-item f-6" alt="cake">
-        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" class="float-item f-7" alt="macaron">
+        <img src="https://cdn-icons-png.flaticon.com/512/2935/2935307.png" class="float-item f-1" alt="particle">
+        <img src="https://cdn-icons-png.flaticon.com/512/3055/3055375.png" class="float-item f-3" alt="particle">
+        <img src="https://cdn-icons-png.flaticon.com/512/751/751621.png" class="float-item f-5" alt="particle">
     </div>
 
-    <div class="overlay" id="overlay" onclick="closeDrawers()"></div>
-
+    <!-- Header (Shared Style) -->
     <header>
-        <div class="logo" data-i18n="logo">BRYLO</div>
+        <div class="logo"><img src="assets/img/BR-Logo-png.png" alt=""></div>
         <div class="header-actions">
-            <div class="cart-btn" onclick="toggleCart()" id="cart-trigger">
-                <i class="fas fa-shopping-bag"></i>
-                <span id="cart-count">0</span>
-            </div>
-            <div class="menu-trigger" onclick="toggleSettings()">
+            <a href="menu.html" style="text-decoration:none;">
+                <div class="cart-btn" style="padding: 10px 20px;">
+                    <i class="fas fa-home"></i> Menu
+                </div>
+            </a>
+            <div class="menu-trigger">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <section class="hero-banner">
-        <h1 class="hero-title" data-i18n="heroTitle">Taste the Magic ✨</h1>
-        <p class="hero-subtitle" data-i18n="heroSubtitle">Artisan sweets crafted with love, baked fresh daily for your
-            delight</p>
-    </section>
-
-    <section class="category-container">
-        <div class="category-tabs" id="categoryTabs">
-            <div class="tab-indicator" id="tabIndicator"></div>
-            <button class="cat-btn active" onclick="filter('sweets', this)" data-i18n="sweets">Sweets</button>
-            <button class="cat-btn" onclick="filter('icecream', this)" data-i18n="icecream">Ice Cream</button>
-            <button class="cat-btn" onclick="filter('bakery', this)" data-i18n="bakery">Bakery</button>
-        </div>
-    </section>
-
-    <main class="product-grid" id="grid"></main>
-
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
-        <span data-i18n="addedToCart">Added to cart!</span>
+    <!-- Sticky Promo Banner -->
+    <div class="sticky-banner">
+        <span>It's a great day for sweets.</span>
+        <a href="menu.html">Start an order</a>
     </div>
 
-    <aside class="drawer drawer-right" id="cartDrawer">
-        <div class="drawer-header">
-            <span data-i18n="yourCart">Your Cart</span>
-            <div class="close-btn" onclick="closeDrawers()">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-        <div id="cartList" style="flex:1; overflow-y:auto;">
-            <div class="cart-empty">
-                <i class="fas fa-shopping-basket"></i>
-                <p data-i18n="empty">Your cart is empty</p>
-            </div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span data-i18n="total">Total</span>
-                <span id="totalPrice">Ð 0</span>
-            </div>
-            <button class="checkout-btn" data-i18n="checkout">
-                <i class="fas fa-lock"></i>
-                SECURE CHECKOUT
-            </button>
-        </div>
-    </aside>
+    <main class="home-main">
 
-    <aside class="drawer drawer-right" id="settingsDrawer">
-        <div class="drawer-header">
-            <span data-i18n="settings">Settings</span>
-            <div class="close-btn" onclick="closeDrawers()">
-                <i class="fas fa-times"></i>
+        <!-- Section 1: Nutella Cookies (Dark Theme) -->
+        <section class="split-section reverse">
+            <div class="split-content">
+                <h2>Mini Cookies Nutella</h2>
+                <p>Indulge in our decadent mini cookies, stuffed with rich Nutella filling. Baked to perfection for a
+                    gooey center and crispy edge.</p>
+                <a href="menu.html" class="cta-btn">Order Nutella Cookies</a>
             </div>
-        </div>
+            <div class="split-image">
+                <img src="assets/img/minicookies.jpeg" alt="Mini Cookies Nutella">
+            </div>
+        </section>
 
-        <div class="lang-toggle" id="langSwitch" data-active="en" onclick="switchLang()">
-            <div class="toggle-bg"></div>
-            <div class="lang-opt active" id="opt-en">English</div>
-            <div class="lang-opt" id="opt-ar">عربي</div>
-        </div>
+        <!-- Section 2: Lemon Cake (Light/Cream Theme) -->
+        <section class="split-section theme-light">
+            <div class="split-content">
+                <h2>Zesty Lemon Cake</h2>
+                <p>Brighten your day with our fresh Lemon Cake. A soft, citrus-infused sponge topped with a delicate
+                    glaze for the perfect balance of sweet and tart.</p>
+                <a href="menu.html" class="cta-btn">Order Lemon Cake</a>
+            </div>
+            <div class="split-image">
+                <img src="assets/img/lemoncake.jpeg" alt="Lemon Cake">
+            </div>
+        </section>
 
-        <div class="settings-menu">
-            <div class="settings-item">
-                <i class="fas fa-comment"></i>
-                <span data-i18n="feedback">Send Feedback</span>
+        <!-- Section 3: Date Cake (Dark Theme) -->
+        <section class="split-section reverse">
+            <div class="split-content">
+                <h2>Signature Date Cake</h2>
+                <p>Experience tradition with our rich Date Cake. Made from premium dates and warm spices, finished with
+                    a luxurious sticky toffee sauce.</p>
+                <a href="menu.html" class="cta-btn">Order Date Cake</a>
             </div>
-            <div class="settings-item">
-                <i class="fas fa-heart"></i>
-                <span data-i18n="favorites">My Favorites</span>
+            <div class="split-image">
+                <img src="assets/img/datecake.jpeg" alt="Date Cake">
             </div>
-            <div class="settings-item">
-                <i class="fas fa-history"></i>
-                <span data-i18n="orders">Order History</span>
-            </div>
-            <div class="settings-item">
-                <i class="fas fa-shield-alt"></i>
-                <span data-i18n="privacy">Privacy Policy</span>
-            </div>
-        </div>
-    </aside>
+        </section>
 
-    <script src="assets/script.js"></script>
+        <!-- Section 4: Ice Cream (Accent Theme) -->
+        <section class="split-section theme-accent">
+            <div class="split-content">
+                <h2>Premium Ice Cream</h2>
+                <p>Cool down with our curated selection of artisanal ice creams. Available in small and large boxes to
+                    share the joy.</p>
+                <a href="menu.html" class="cta-btn">Order Ice Cream</a>
+            </div>
+            <div class="split-image">
+                <img src="assets/img/icecream.jpeg" alt="Ice Cream">
+            </div>
+        </section>
+
+        <!-- Section 5: Za'atar Babka (Light Theme) -->
+        <section class="split-section reverse theme-light">
+            <div class="split-content">
+                <h2>Savory Za'atar Babka</h2>
+                <p>A twisted delight. Our buttery babka bread is swirled with aromatic za'atar spices, perfect for a
+                    savory snack or light breakfast.</p>
+                <a href="menu.html" class="cta-btn">Order Babka</a>
+            </div>
+            <div class="split-image">
+                <img src="assets/img/babka.jpeg" alt="Za'atar Babka">
+            </div>
+        </section>
+
+        <!-- Section 6: Kinder Cookies (Dark Theme) -->
+        <section class="split-section">
+            <div class="split-content">
+                <h2>Mini Cookies Kinder</h2>
+                <p>A favorite for all ages. Soft, chewy mini cookies loaded with generous chunks of smooth Kinder
+                    chocolate.</p>
+                <a href="menu.html" class="cta-btn">Order Kinder Cookies</a>
+            </div>
+            <div class="split-image">
+                <img src="assets/img/mini.jpeg" alt="Mini Cookies Kinder">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>*Terms apply. See app for details.</p>
+        <p>&copy; 2026 Brylo Brew Cafe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Intersection Observer for Scroll Animations
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.split-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
 </body>
 
 </html>
