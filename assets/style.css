@@ -1,6 +1,6 @@
 :root {
-    --primary: #1a1a2e;
-    --primary-light: #16213e;
+    --primary: #4c3734;
+    --primary-light: #8f7f72;
     --accent: #e8b86d;
     --accent-secondary: #f4d19b;
     --bg-main: #fefcf9;
@@ -13,7 +13,7 @@
     --transition-smooth: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --gradient-warm: linear-gradient(135deg, #e8b86d 0%, #f4d19b 100%);
-    --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --gradient-dark: linear-gradient(135deg, #4c3734 0%, #8f7f72 100%);
 }
 
 * {
