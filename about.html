@@ -27,7 +27,9 @@
         <div class="logo"><a href="index.html"><img src="assets/img/BR-Logo-png.png" alt=""></a></div>
         <div class="header-actions">
             <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
             <a href="menu.html" style="text-decoration:none;">
@@ -43,23 +45,32 @@
         <section class="about-hero reveal">
             <span class="contact-tag"><i class="fas fa-heart"></i> Our Journey</span>
             <h1 class="main-headline">
-                Driven by passion long before<br>it became a business.
+                Driven by <span class="gold-text">passion</span> long before<br>it became a business.
             </h1>
-            <div class="manifesto-text">
-                <p>
-                    Our shared love for food, detail, and creativity brought the Brylo family together to build a place
-                    where everyone feels like part of a larger family. We believe food is more than a product—it is an
-                    experience, a memory, and a flavor that stays.
-                </p>
-                <br>
-                <p>
-                    From day one, we committed to crafting everything with our own hands with honesty, high quality, and
-                    uncompromising craftsmanship. We promise to preserve what we started: fresh products, a warm
-                    atmosphere, and continuous development that reflects your expectations.
-                </p>
+            <div class="manifesto-cards">
+                <div class="manifesto-card">
+                    <div class="manifesto-icon"><i class="fas fa-seedling"></i></div>
+                    <p>
+                        Our shared love for food, detail, and creativity brought the Brylo family together to build a
+                        place
+                        where everyone feels like part of a larger family. We believe food is more than a product—it is
+                        an
+                        experience, a memory, and a flavor that stays.
+                    </p>
+                </div>
+                <div class="manifesto-card">
+                    <div class="manifesto-icon"><i class="fas fa-gem"></i></div>
+                    <p>
+                        From day one, we committed to crafting everything with our own hands with honesty, high quality,
+                        and
+                        uncompromising craftsmanship. We promise to preserve what we started: fresh products, a warm
+                        atmosphere, and continuous development that reflects your expectations.
+                    </p>
+                </div>
             </div>
             <div class="signature-block">
-                From us to you... The Brylo Family
+                <div class="sig-divider"></div>
+                <span>From us to you... <i class="fas fa-heart sig-heart"></i> The Brylo Family</span>
             </div>
         </section>
 
@@ -209,19 +220,21 @@
                 <h4>Stay Connected</h4>
                 <p>Follow us on social media for updates</p>
                 <div class="footer-socials">
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social-link" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+                    <a href="https://www.instagram.com/brylo.ae/" target="_blank" class="social-link"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a> -->
+                    <a href="https://api.whatsapp.com/send/?phone=971553545160" target="_blank" class="social-link"
+                        aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <!-- <a href="#" class="social-link" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a> -->
                 </div>
             </div>
         </div>
 
         <!-- Bottom bar -->
         <div class="footer-bottom">
-            <p>&copy; 2026 Brylo Brew Cafe. All rights reserved.</p>
-            <p class="footer-credits">Crafted with <i class="fas fa-heart" style="color:var(--accent);"></i> in Dubai
-            </p>
+            <p>&copy; 2026 <span style="color:var(--accent);">BryloBrew Cafe.</span> All rights reserved</p>
+            <!-- <p class="footer-credits">Crafted with <i class="fas fa-heart" style="color:var(--accent);"></i> in Dubai</p> -->
+            <p>Designed by <a href="" target="_blank" style="color:var(--accent); text-decoration: none;">Adnan</a></p>
         </div>
     </footer>
 
@@ -246,7 +259,6 @@
         });
     </script>
 
-    <!-- Lenis + GSAP Smooth Scroll -->
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
