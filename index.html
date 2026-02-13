@@ -26,16 +26,17 @@
 
     <!-- Header (Shared Style) -->
     <header>
-        <div class="logo"><img src="assets/img/BR-Logo-png.png" alt=""></div>
+        <div class="logo"><a href="index.html"><img src="assets/img/BR-Logo-png.png" alt=""></a></div>
         <div class="header-actions">
+            <nav class="header-nav">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
             <a href="menu.html" style="text-decoration:none;">
                 <div class="cart-btn" style="padding: 10px 20px;">
                     <i class="fa-solid fa-cookie-bite"></i> Menu
                 </div>
             </a>
-            <!-- <div class="menu-trigger">
-                <i class="fas fa-bars"></i>
-            </div> -->
         </div>
     </header>
 
@@ -127,9 +128,61 @@
 
     </main>
 
-    <footer class="main-footer">
-        <p>*Terms apply. See app for details.</p>
-        <p>&copy; 2026 Brylo Brew Cafe. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="brylo-footer">
+        <!-- Gold accent line -->
+        <div class="footer-accent"></div>
+
+        <div class="footer-main">
+            <!-- Column 1: Brand -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="assets/img/BR-Logo-png.png" alt="Brylo" class="footer-logo-img"></a>
+                </div>
+                <p class="footer-tagline">Artisan sweets & baked goods crafted with love, served fresh daily.</p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Locations</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Support -->
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter -->
+            <div class="footer-col footer-newsletter">
+                <h4>Stay Connected</h4>
+                <p>Follow us on social media for updates</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Brylo Brew Cafe. All rights reserved.</p>
+            <p class="footer-credits">Crafted with <i class="fas fa-heart" style="color:var(--accent);"></i> in Dubai
+            </p>
+        </div>
     </footer>
 
     <script>
@@ -156,6 +209,12 @@
             });
         });
     </script>
+
+    <!-- Lenis + GSAP Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/script.js"></script>
 
 </body>
 

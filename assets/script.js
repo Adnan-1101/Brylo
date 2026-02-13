@@ -144,6 +144,7 @@ let modalImages = [];
 // ... [Existing render function updates] ...
 function render() {
     const grid = document.getElementById("grid");
+    if (!grid) return;
     grid.innerHTML = "";
     const items = products.filter(p => p.type === filterType);
 
@@ -243,9 +244,12 @@ function goToSlide(index) {
 }
 
 // Close modal on outside click
-document.getElementById("productModal").addEventListener("click", (e) => {
-    if (e.target.classList.contains("modal-overlay")) closeModal();
-});
+const _modal = document.getElementById("productModal");
+if (_modal) {
+    _modal.addEventListener("click", (e) => {
+        if (e.target.classList.contains("modal-overlay")) closeModal();
+    });
+}
 
 // ... [Existing filter, toast, ripple logic] ...
 
@@ -323,6 +327,7 @@ function add(id, event) {
 
 function updateCart() {
     const list = document.getElementById("cartList");
+    if (!list) return;
     if (cart.length === 0) {
         list.innerHTML = `
             <div class="cart-empty">
@@ -330,7 +335,8 @@ function updateCart() {
                 <p>${dict.empty[lang]}</p>
             </div>
         `;
-        document.getElementById("totalPrice").innerText = "Ð 0";
+        const tp = document.getElementById("totalPrice");
+        if (tp) tp.innerText = "Ð 0";
         return;
     }
 
@@ -348,7 +354,8 @@ function updateCart() {
             </div>
         `;
     }).join("");
-    document.getElementById("totalPrice").innerText = "Ð " + total;
+    const tp2 = document.getElementById("totalPrice");
+    if (tp2) tp2.innerText = "Ð " + total;
 }
 
 // Drawer & Language Logic
@@ -370,7 +377,8 @@ function toggleSettings() {
 
 function closeDrawers() {
     document.querySelectorAll(".drawer").forEach(d => d.classList.remove("active"));
-    document.getElementById("overlay").classList.remove("active");
+    const overlay = document.getElementById("overlay");
+    if (overlay) overlay.classList.remove("active");
 }
 
 function switchLang() {
@@ -408,10 +416,45 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeDrawers();
 });
 
-// Initialize
-window.addEventListener('load', () => {
-    render();
-    setTimeout(updateTabIndicator, 100);
-});
+// Initialize (only on menu page)
+if (document.getElementById('grid')) {
+    window.addEventListener('load', () => {
+        render();
+        setTimeout(updateTabIndicator, 100);
+    });
+    window.addEventListener('resize', updateTabIndicator);
+}
 
-window.addEventListener('resize', updateTabIndicator);
+(function () {
+    if (typeof Lenis === 'undefined') {
+        console.warn('Lenis script not loaded.');
+        return;
+    }
+
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+    });
+
+    window.lenis = lenis;
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+    } else {
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    }
+
+    console.log('Lenis smooth scroll initialized.');
+})();
