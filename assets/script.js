@@ -411,9 +411,44 @@ function switchLang() {
     }, 200);
 }
 
+// Mobile Menu Toggle
+function toggleMobileMenu() {
+    const btn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.mobile-nav');
+    if (!btn || !nav) return;
+    const isOpen = nav.classList.toggle('open');
+    btn.classList.toggle('active', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    // Swap icon
+    const icon = btn.querySelector('i');
+    if (icon) {
+        icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    }
+}
+
+// Auto-highlight current page in mobile nav
+(function highlightMobileNav() {
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.mobile-nav a').forEach(a => {
+        if (a.getAttribute('href') === page) a.classList.add('active-link');
+    });
+})();
+
 // Handle keyboard navigation
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeDrawers();
+    if (e.key === 'Escape') {
+        closeDrawers();
+        // Also close mobile menu
+        const btn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('.mobile-nav');
+        if (btn && nav && nav.classList.contains('open')) {
+            btn.classList.remove('active');
+            nav.classList.remove('open');
+            document.body.style.overflow = '';
+            const icon = btn.querySelector('i');
+            if (icon) icon.className = 'fas fa-bars';
+        }
+    }
 });
 
 // Initialize (only on menu page)

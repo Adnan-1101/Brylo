@@ -406,6 +406,191 @@ header {
     transform: rotate(90deg);
 }
 
+/* === MOBILE HAMBURGER MENU === */
+.mobile-menu-btn {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 1100;
+    padding: 0;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-btn i {
+    font-size: 1.4rem;
+    color: var(--primary);
+    transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mobile-menu-btn.active i {
+    transform: rotate(90deg);
+}
+
+/* Mobile Nav Overlay */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(254, 252, 249, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: 1050;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.mobile-nav.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    padding: 14px 40px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    position: relative;
+}
+
+.mobile-nav.open a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-nav.open a:nth-of-type(1) {
+    transition-delay: 0.08s;
+}
+
+.mobile-nav.open a:nth-of-type(2) {
+    transition-delay: 0.14s;
+}
+
+.mobile-nav.open a:nth-of-type(3) {
+    transition-delay: 0.20s;
+}
+
+.mobile-nav.open a:nth-of-type(4) {
+    transition-delay: 0.26s;
+}
+
+.mobile-nav.open a:nth-of-type(5) {
+    transition-delay: 0.32s;
+}
+
+/* Close button inside overlay */
+.mobile-nav-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 14px;
+    background: rgba(76, 55, 52, 0.08);
+    color: var(--primary);
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+.mobile-nav.open .mobile-nav-close {
+    opacity: 1;
+    transform: rotate(0deg);
+    transition-delay: 0.05s;
+}
+
+.mobile-nav-close:hover {
+    background: rgba(232, 184, 109, 0.15);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active-link {
+    color: var(--accent);
+    background: rgba(232, 184, 109, 0.08);
+}
+
+.mobile-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 30px;
+    height: 3px;
+    border-radius: 4px;
+    background: var(--gradient-warm);
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav a:hover::after,
+.mobile-nav a.active-link::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.mobile-nav .mobile-nav-cta {
+    margin-top: 20px;
+    padding: 14px 36px;
+    background: var(--gradient-warm);
+    color: white;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(232, 184, 109, 0.3);
+}
+
+.mobile-nav .mobile-nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(232, 184, 109, 0.4);
+    background: var(--gradient-warm);
+    color: white;
+}
+
+.mobile-nav .mobile-nav-cta::after {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header-nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+}
+
 /* --- Hero Banner --- */
 .hero-banner {
     padding: 60px 5% 40px;

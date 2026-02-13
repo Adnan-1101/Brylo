@@ -44,8 +44,22 @@ https://github.com/mnihal-13
                     <i class="fa-solid fa-cookie-bite"></i> Menu
                 </div>
             </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
+
+    <div class="mobile-nav">
+        <button class="mobile-nav-close" onclick="toggleMobileMenu()" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="menu.html" class="mobile-nav-cta"><i class="fa-solid fa-cookie-bite"></i> Menu</a>
+    </div>
 
     <!-- Contact Hero -->
     <section class="contact-hero">
@@ -116,7 +130,10 @@ https://github.com/mnihal-13
         <!-- Right: Map -->
         <section class="contact-map-card">
             <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4147.822021668061!2d55.83532717534833!3d24.150588978399455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDA5JzAyLjEiTiA1NcKwNTAnMTYuNSJF!5e1!3m2!1sen!2sin!4v1771003708199!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4147.822021668061!2d55.83532717534833!3d24.150588978399455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDA5JzAyLjEiTiA1NcKwNTAnMTYuNSJF!5e1!3m2!1sen!2sin!4v1771003708199!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="map-overlay-info">
                 <i class="fas fa-location-dot"></i>
@@ -166,9 +183,11 @@ https://github.com/mnihal-13
                 <h4>Stay Connected</h4>
                 <p>Follow us on social media for updates</p>
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/brylo.ae/" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/brylo.ae/" target="_blank" class="social-link"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <!-- <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a> -->
-                    <a href="https://api.whatsapp.com/send/?phone=971553545160" target="_blank" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=971553545160" target="_blank" class="social-link"
+                        aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     <!-- <a href="#" class="social-link" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a> -->
                 </div>
             </div>
@@ -176,7 +195,7 @@ https://github.com/mnihal-13
 
         <!-- Bottom bar -->
         <div class="footer-bottom">
-            <p>&copy; 2026 <span style="color:var(--accent);">BryloBrew Cafe.</span>  All rights reserved</p>
+            <p>&copy; 2026 <span style="color:var(--accent);">BryloBrew Cafe.</span> All rights reserved</p>
             <!-- <p class="footer-credits">Crafted with <i class="fas fa-heart" style="color:var(--accent);"></i> in Dubai</p> -->
             <p>Designed by <a href="" target="_blank" style="color:var(--accent); text-decoration: none;">Adnan</a></p>
         </div>
