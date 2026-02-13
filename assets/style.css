@@ -3277,6 +3277,7 @@ textarea.form-control {
     background: linear-gradient(135deg, rgba(232, 184, 109, 0.08) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .c-card:hover::before {
